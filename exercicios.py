@@ -17,17 +17,24 @@ print("16. Receber um número com parâmetro e exibir o dobro")
 print("17. Receba dois números com parâmetros e exiba o maior")
 print("18. Receba três números com parâmetros e calcule a média")
 print("19. Faça a contagem de 5 até 1 com recursiva")
-print("20. Receba um número e calcule o seu fatorial com fatorial")
-print("21. Receba um número e some ele pelos números seguintes dele 10 vezes")
-print("22. Sair")
+print("20. Receba um número e calcule o seu fatorial com recursiva")
+print("21. Receba um número e some ele pelos números seguintes dele 10 vezes com recursiva")
+print("22. Receba um número e calcule a terceira potência dele com recursiva")
+print("23. Receba um número e calcule a potência desejada com recursiva")
+print("24. Sair")
+# o opcao vai receber o valor informado
 opcao = int(input(("Escolha uma das opções acima!\n")))
+# o match vai ve o numero que foi informado pela opcao e vai ve se tem e vai mostra
 match opcao:
     case 1:
+        # int é numero inteiro
         idade = int;
+        # str é texto
         nome = str;
         print("\n")
         print("Vcê escolher ler o nome e a idade e mostra-lo!\n")
         idade = int(input(("Informe sua idade..: ")))
+        # se a idade informada for menor que 0 entao informe a idade novamente ate ela ser positiva
         while idade < 0:
             print("Idade informada é NEGATIVA!\n")
             idade = int(input("Informe uma idade maior que zero..: "))
@@ -37,6 +44,7 @@ match opcao:
     case 2:
         num1 = float;
         num2 = float;
+        # float é número com virgula 
         print("\n")
         print("Você escolheu ler dois números e exibir a soma deles!\n")
         num1 = float(input("Informe o primeiro número..: "))
@@ -47,6 +55,7 @@ match opcao:
         while num2 < 0:
             print("NEGATIVO!\n")
             num2 = float(input("Informe o segundo número que seja positivo..: "))
+            # receber o número é "=" dizer quando um numero é igual ao outro é "=="
         resultado = num1 + num2;
         print("A soma de", num1, "+", num2, " é:", resultado)
         print("\n")
@@ -109,6 +118,7 @@ match opcao:
         if idade < 12:
             print("Com a idade de", idade, "você é uma criança!")
         if idade >= 13 and idade < 18:
+        # "and" é o "E"
             print("Com a idade de", idade, "você é um adolescente!")
         if idade >= 18 and idade < 50:
             print("Com a idade de", idade, "você é um adulto!")
@@ -155,7 +165,9 @@ match opcao:
             num1 = float(input("Informe um valor que seja positivo..: "))
         if num1 >= 100.01:
             desconto = num1 / 10
+            # aplicando o desconto de 10% quando o valor for maior que 100.00
             resultado = num1 - desconto
+            # recebendo o número menos o desconto pra mostra o numero com desconto
             print("O valor informado é válido para aplicar o desconto, valor sem desconto:", num1, "| com desconto:", resultado, "| desconto aplicado:", desconto)
         else:
             print("O valor informado não é válido para aplicar o desconto, valor informado:", num1)
@@ -167,6 +179,7 @@ match opcao:
         print("Você escolheu ler usuario e senha e efetuar o login!\n")
         usuario = input("Informe o usuário..: ")
         while usuario != "user":
+        # "!=" significa diferente
             print("Usuário incorreto!\n")
             usuario = str(input("Informe o usuário correto..: "))
         senha = input("Informe a senha..: ")
@@ -178,6 +191,7 @@ match opcao:
         print("\n")
     case 10:
         vetor = [1,2,3,4,5];
+        # as linhas do vetor vao de 0 até o ultimo número, no caso aqui: 0,1,2,3,4
         print("\n")
         print("Você escolheu a exibição de uma matriz de 5 números!\n")
         print("Mostrando os números de uma vez:", vetor, "\n")
@@ -190,6 +204,7 @@ match opcao:
         print("\n")
     case 11:
         vetor = [];
+        # Vetor vazio pq os dados vao ser informados abaixo
         print("\n")
         print("Você escolheu ler 5 números e exibi-los em forma de vetor!\n")
         vetor.append(input("Informe o primeiro número:"))
@@ -201,6 +216,7 @@ match opcao:
         print("Os números informados em forma de vetor:", vetor)
         print("\n")
         print("Mostrando em forma de lista:")
+        # aqui ele mostra um valor de cada vez
         for vetor in vetor:
             print(vetor)
         print("\n")
@@ -216,6 +232,7 @@ match opcao:
         vetor.append(int(input("Informe o quinto número:")))
         print("\n")
         print("Os números informados em forma de vetor:", vetor)
+        # aqui alem dele mostra um número de cada vez ele vai somar um de cada vez
         for vetor in vetor:
             soma = soma + vetor
         print("Soma dos valores:", soma)
@@ -225,17 +242,23 @@ match opcao:
         soma = 0;
         print("\n")
         print("Você escolheu ler 100 números e exibir a soma em forma de vetor!\n")
-        for i in range(10):
+        for i in range(100):
+        # "range(100)" significa 100 vezes, entao ele vai fazer o metodo 100 vezes
             numero = int(input(f"Informe o {i + 1}° número:"))
+            # pedindo os números
             vetor.append(numero)
+            # guardando os numeros
         print("\n")
+        # somando os numeros informados
         for numero in vetor:
             soma = soma + numero
+        # mostrando os numeros informados e a soma
         print("Os números informados em forma de vetor:", vetor)
         print(f"Soma dos números informados:{soma}")
         print("\n")
     case 14:
         matriz = [[1,2,3], [4,5,6], [7,8,9]];
+        # matriz é um vetor com colunas inves de apenas linhas
         print("\n")
         print("Você escolheu exibir uma matriz 3X3!\n")
         print("Matriz reta:", matriz, "\n")
@@ -245,14 +268,20 @@ match opcao:
         print("\n")
     case 15:
         matriz = [];
+        # matriz vazia
         print("\n")
         print("Você escolheu ler uma matriz 3X3!\n")
         for i in range(3):
             linha = []
             for j in range(3):
+                # por ser matriz serão dois contadores, um das linhas e um das colunas
+                # aqui a coluna pede o numero, a linha recebe o numero e vai organizando
                 numero = int(input("Informe um número..:"))
                 linha.append(numero)
+            # no final a matriz recebe td organizado
             matriz.append(linha)
+        # mostrando os números da matriz, se mostrar a matriz inves da linha vai mostrar todos os números inves deles organizados
+        # a linha ta com eles organizados dentro da matriz
         for linha in matriz:
             print("Valores informados em matriz 3X3:", linha)
         print("\n")
@@ -260,8 +289,12 @@ match opcao:
         valor = 5;
         print("\n")
         print("Você escolheu receber dois números com parâmetro e exibir o dobro!\n")
+        # def significa defina, aqui to definindo dobro como parametro e o nome dele é numero
         def dobro(numero):
+            # metodo:
             print("O dobro de 5 é:", numero * 2)
+        # declarando o valor dentro do dobro, o parametro copia o valor declarado no topo do codigo
+        # converte o valor copia no numero e multiplica por 2
         dobro(valor)
         print("\n")
     case 17:
@@ -272,12 +305,14 @@ match opcao:
         num1 = int(input("Informe o primeiro número..:"))
         num2 = int(input("Informe o segundo número..:"))
         def maior(num1, num2):
+        # nome dos parametros que vao pega o num1 e num2 é o proprio num1 e num2 dentro do maior()
             if num1 > num2:
                 print("O maior número é o primeiro:", num1)
             else:
                 print("O maior número é o segundo:", num2)
             if num1 == num2:
                 print("Os dois números são iguais:", num1, "e", num2)
+        # declarando num1 e num2 como os valores a serem copiados e validados
         maior(num1, num2)
         print("\n")
     case 18:
@@ -301,12 +336,15 @@ match opcao:
         def contagem(n):
             print(n)
             contagem(n - 1)
+        # fazendo o numero -1 e mostrando
         def contagem(n):
             if n == 1:
                 print(n)
                 return
             print(n)
             contagem(n - 1)
+            # aqui quando o numero for igual a 1 ele vai parar, fazendo 5,4,3,2,1 e paro
+        # declarando o valor da recursiva como o número declarado la em cima, parecido com o do parametro nessa parte de declarar
         contagem(numero)
         print("\n")
     case 20:
@@ -318,7 +356,9 @@ match opcao:
             if n == 1:
                 print(n)
                 return 1
+            # quando numero for igual a 1 ele retorna
             return n * fatorial(n - 1)
+            # a formula é numero * numero e menos 1, quando o numero vira 1 ele para de multiplicar
         print("O fatorial de:", numero, "é:", fatorial(numero))
         print("\n")
     case 21:
@@ -326,14 +366,47 @@ match opcao:
         print("\n")
         print("Você escolheu ler um número e somar com os seguintes dele 10 vezes!\n")
         numero = int(input("Informe um número..:"))
-        def soma(n):
-            if n == 10:
-                print(n)
-                return 10
-            return n + soma(n + 1)
-        print("A soma de:", numero, "com os 10 seguintes números é:", soma(numero))
+        def soma(n, limite):
+            # pra funcionar o metodo, a recursiva impoe um limite, quando o numero for igual ao limite ele para, esse limite é 10
+            # o metodo é: numero + o proximo numero e o limite
+            if n == limite:
+                return n
+            return n + soma(n + 1, limite)
+        # aqui no print o limite é definido como 10
+        print("A soma de:", numero, "com os 10 seguintes números é:", soma(numero, numero + 10))
         print("\n")
-    case 22:    
+    case 22:
+        numero = int;
+        print("\n")
+        print("Você escolheu receber um número e mostrar a sua terceira potência! com recursiva!\n")
+        numero = int(input("Informe um número..:"))
+        # simples, numero * numero * numero
+        def potencia(n):
+            if n == 1:
+                return 1
+            return n * n * n
+        print("A terceira potência de:", numero, "é:", potencia(numero))
+        print("\n")
+    case 23:
+        numero = int;
+        po = int;
+        print("\n")
+        print("Você escolheu receber um número e a potência desejada com recursiva!\n")
+        numero = int(input("Informe um número..:"))
+        po = int(input("Informe a potência..:"))
+        # a recursiva ta sendo declarada com numero e po entre parenteses, 
+        # o metodo é o seguinte: o número informado vai multiplicar por ele mesmo, a quantidade de vezes é a potencia
+        # entao funciona assim: numero * numero, se a pontencia informada ser 3, entao vai fazer numero * numero 3 vezes
+        # quando fizer isso uma vez, a pontecia vai diminuir 1, entao o 3 vira 2, dps 1 ai ele retorna o resultado
+        # resumindo ele faz numero * numero e pontecia -1, quando potencia vira 1 ele retorna o resultado
+        def potencia(numero, po):
+            if po == 1:
+                return numero
+            return numero * potencia(numero, po - 1)
+        print("A terceira potência de:", numero, "é:", potencia(numero, po))
+        print("\n")
+    case 24:    
         print("Até Logo...")
+    # o "_:" é um número que nao tem no switch case
     case _:
         print("Informe uma opção válida!")
